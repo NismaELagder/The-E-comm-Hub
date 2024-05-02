@@ -12,6 +12,7 @@ import { ProductsComponent } from './dashboard/components/products/products.comp
 import { ProductListComponent } from './dashboard/components/product-list/product-list.component';
 import { ProductFormComponent } from './dashboard/components/product-form/product-form.component';
 import { HomeComponent } from './Home/home/home.component';
+import { ContactComponent } from './contact/contact/contact.component';
 const routes: Routes = [
   {
     path: '',
@@ -56,7 +57,10 @@ const routes: Routes = [
       },
     ],
   },
-
+  {
+    path: 'contact',
+    component: ContactComponent,
+  },
   {
     path: '**',
     redirectTo: 'home',

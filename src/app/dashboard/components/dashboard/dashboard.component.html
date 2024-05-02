@@ -1,17 +1,20 @@
-<div class="mx-40">
+<div class="lg:mx-40 md:mx-20 mx-3">
   <h1 class="font-semibold text-3xl text-center my-12">My Account</h1>
-  <div class="flex">
-    <div class="w-1/5">
-      <aside class="w-full max-h-[60vh] p-8 bg-[#f3f5f7]">
+  <div class="flex md:flex-row flex-col">
+    <div class="w-full md:w-1/5">
+      <aside class="w-full max-h-[60vh] p-2 md:p-8 bg-[#f3f5f7]">
         <h6 class="font- text-xl mb-4">Account</h6>
-        <hr />
-        <ul class="text-sm my-2 leading-7 text-primary">
-          <li><a routerLink="/dashboard/orders" class="">Orders</a></li>
+        <hr class="md:block hidden" />
+        <ul class="text-sm my-2 leading-7 text-primary md:block flex">
+          <li class="md:me-0 me-4">
+            <a routerLink="/dashboard/orders" class="">Orders</a>
+          </li>
           <li><a routerLink="/dashboard/products" class="">Products</a></li>
+          <li class="md:mt-6"><app-logout></app-logout></li>
         </ul>
       </aside>
     </div>
-    <div class="w-4/5 px-20 py-5">
+    <div class="w-full md:w-4/5 md:px-20 py-5">
       <router-outlet></router-outlet>
     </div>
   </div>

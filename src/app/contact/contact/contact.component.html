@@ -1,0 +1,80 @@
+<div class="md:mx-20 lg:mx-40 mx-3">
+  <div class="my-8">
+    <h1 class="font-semibold text-sm md:mb-6">
+      Home <span class="text-primary mx-4">></span> Contact us
+    </h1>
+    <p class="font-semibold md:text-2xl md:w-1/2">
+      At The E-comm Hub, we believe in more than just transactions — we believe
+      in connections. Our journey fill with passion for delivering exceptional
+      products.
+    </p>
+  </div>
+  <div class="flex h-[200px] md:h-[350px] md:flex-row flex-col">
+    <div class="bg-img w-1/2"></div>
+    <div class="w-1/2 px-6 flex justify-center flex-col bg-[#f3f5f7]">
+      <h1 class="font-semibold text-3xl mb-4">About us</h1>
+      <p class="text-xs w-3/4 leading-6">
+        We are a team of dedicated individuals who are committed to providing
+        you with the best shopping experience possible.
+        <br />
+        From our founders to our customer support team, each member of our
+        family shares a common goal: to make your life easier and more enjoyable
+        through the products we offer.
+      </p>
+    </div>
+  </div>
+  <div class="my-10">
+    <h1 class="font-semibold text-xl mb-4">Contact Information</h1>
+    <div class="flex md:flex-row flex-col">
+      <div class="w-1/2 px-4">
+        <form>
+          <div>
+            <label for="title" class="text-primary text-sm font-semibold"
+              >Full name</label
+            >
+            <input
+              type="text"
+              placeholder="Full name"
+              [(ngModel)]="info.name"
+            />
+          </div>
+          <div>
+            <label for="" class="text-primary text-sm font-semibold"
+              >Email</label
+            >
+            <input type="email" [(ngModel)]="info.email" placeholder="E-mail" />
+          </div>
+          <div>
+            <label for="" class="text-primary text-sm font-semibold"
+              >Message</label
+            >
+            <textarea
+              name="description"
+              class="text-primary text-sm font-semibold"
+              [(ngModel)]="info.message"
+              placeholder="Your message..."
+              rows="5"
+            >
+            </textarea>
+          </div>
+
+          <div>
+            <button
+              type="button"
+              class="bg-[black] text-white px-12 py-2 rounded text-[white] my-4"
+              (click)="onSend()"
+            >
+              Send
+            </button>
+          </div>
+        </form>
+        <p *ngIf="showMessage" class="text-xs">{{ successMessage }}</p>
+      </div>
+      <div class="w-1/2 map-img"></div>
+    </div>
+  </div>
+</div>
+<div class="mx-3 md:mx-20 lg:mx-40">
+  <app-services></app-services>
+</div>
+<app-footer></app-footer>

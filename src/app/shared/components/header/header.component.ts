@@ -13,21 +13,38 @@ export class HeaderComponent {
   isSeller: boolean = false;
   hideBtn: boolean = false;
   showDashboardBtn: boolean = false;
-
+  hideNav: boolean = false;
   ngOnInit() {
     this.Router.events.subscribe((event: any) => {
+      if (event.url == '/login' || event.url === '/signup') {
+        this.hideNav = true;
+      } else {
+        this.hideNav = false;
+      }
       // console.log(event.url);
       this.isSeller =
         JSON.parse(localStorage.getItem('currentUser')!)?.accountType ===
         'seller';
       if (localStorage.getItem('isLoggedIn')) {
         this.hideBtn = true;
+      } else {
+        this.hideBtn = false;
       }
 
       if (localStorage.getItem('isLoggedIn') && this.isSeller) {
         this.showDashboardBtn = true;
+        console.log(localStorage.getItem('isLoggedIn'));
+        console.log(this.isSeller);
+      } else {
+        this.showDashboardBtn = false;
       }
+      console.log(this.showDashboardBtn);
     });
+  }
+  onLogout() {
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('isLoggedIn');
+    this.Router.navigateByUrl('');
   }
 
   // const currentUser = JSON.parse(localStorage.getItem('currentUser')!);

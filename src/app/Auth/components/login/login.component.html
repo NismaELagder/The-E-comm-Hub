@@ -1,17 +1,17 @@
-<div class="h-screen flex">
-  <div class="w-1/2 bg-img h-full">
-    <h1 class="text-2xl text-center text-[white] font-bold py-16">
+<div class="h-screen flex md:flex-row flex-col">
+  <div class="md:w-1/2 bg-img md:h-full h-1/2">
+    <h1 class="text-2xl text-center text-[white] font-bold py-8 md:py-16">
       The E-comm Hub
     </h1>
   </div>
-  <div class="w-1/2 flex items-center px-16">
-    <div class="font-secondary w-full">
+  <div class="md:w-1/2 flex items-center px-16">
+    <div class="font-secondary w-full md:p-0 py-6">
       <h3 class="my-4 font-bold text-2xl">Sign in</h3>
       <p class="text-primary text-xs">
         Don't have an account, yet?
         <a routerLink="/signup" class="text-[#38cb89]">Sign up</a>
       </p>
-      <form class="w-2/3 block">
+      <form class="md:w-2/3 block">
         <input
           type="email"
           class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
@@ -36,7 +36,7 @@
         >
           Sign In
         </button>
-        <p *ngIf="loginMessage !== ''" class="ps-1 error text-danger py-2">
+        <p *ngIf="loginMessage !== ''" class="ps-1 error py-2 text-xs">
           {{ loginMessage }}
         </p>
       </form>

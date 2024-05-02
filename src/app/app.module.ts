@@ -17,6 +17,7 @@ import { ProductListComponent } from './dashboard/components/product-list/produc
 import { FormsModule } from '@angular/forms';
 import { ProductFormComponent } from './dashboard/components/product-form/product-form.component';
 import { HomeComponent } from './Home/home/home.component';
+import { ContactComponent } from './contact/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HomeComponent } from './Home/home/home.component';
     ProductListComponent,
     ProductFormComponent,
     HomeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

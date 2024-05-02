@@ -1,0 +1,29 @@
+.bg-img {
+  background-image: url("https://st.depositphotos.com/2026267/2280/i/450/depositphotos_22807282-stock-photo-online-shop.jpg");
+  background-size: 100% 100%;
+}
+
+.map-img {
+  background-image: url("https://coxauto.com.au/wp-content/uploads/2019/07/Map-Placeholder@2x.jpg");
+  background-size: 100% 100%;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  border: solid 1px #dcdddd;
+  padding: 5px 10px;
+  margin: 0.4rem 0;
+  border-radius: 5px;
+}
+
+form div {
+  margin: 0.7rem 0;
+}
+
+@media all and(min-width:768px) {
+  input,
+  textarea {
+    width: 60%;
+  }
+}

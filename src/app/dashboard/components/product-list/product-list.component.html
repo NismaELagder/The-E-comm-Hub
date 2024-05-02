@@ -9,7 +9,7 @@
 <div class="flex justify-between flex-wrap">
   <div
     *ngFor="let product of products"
-    class="border border-[black] p-6 w-[48%] rounded relative pb-20 text-sm leading-5 my-4"
+    class="border border-[black] p-6 w-full lg:w-[48%] rounded relative pb-20 text-sm leading-5 my-4"
   >
     <div><img src="{{ product.item.image }}" alt="" class="w-14 h-14" /></div>
     <p class="font-semibold mt-4">{{ product.item.title }}</p>
@@ -18,11 +18,11 @@
     </p>
     <p><span class="font-semibold">Price </span>{{ product.item.price }}</p>
     <p class="text-xs">
-      <span class="font-semibold">Description </span
+      <span class="font-semibold text-sm">Description </span
       >{{ product.item.description }}
     </p>
     <button
-      class="bg-[black] px-6 py-2 text-[white] mt-2 rounded absolute bottom-2"
+      class="bg-[black] px-6 py-2 text-[white] mt-1 md:mt-2 rounded absolute bottom-2"
       (click)="deleteProduct(product.id)"
     >
       Delete
