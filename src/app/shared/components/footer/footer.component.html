@@ -9,10 +9,18 @@
     <ul
       class="list-none flex flex-col md:flex-row justify-center items-center h-full text-[#f3f5f7] md:text-base text-xs leading-6 md:leading-normal"
     >
-      <li routerLink="/" class="me-4">Home</li>
-      <li routerLink="/shop" class="me-4">Shop</li>
-
-      <li routerLink="/contact" class="">Contact us</li>
+      <li
+        routerLinkActive="active"
+        routerLink=""
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="me-4"
+      >
+        Home
+      </li>
+      <li routerLinkActive="active" routerLink="/shop" class="me-4">Shop</li>
+      <li routerLinkActive="active" routerLink="/contact" class="">
+        Contact us
+      </li>
     </ul>
   </nav>
   <hr

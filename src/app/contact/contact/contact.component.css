@@ -27,3 +27,7 @@ form div {
     width: 60%;
   }
 }
+
+button:disabled {
+  opacity: 0.5;
+}

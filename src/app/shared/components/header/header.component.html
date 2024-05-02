@@ -8,9 +8,16 @@
   <ul
     class="list-none flex justify-center items-center h-full text-primary text-xs md:text-sm lg:text-base"
   >
-    <li routerLink="/" class="me-4">Home</li>
-    <li routerLink="/shop" class="me-4">Shop</li>
-    <li routerLink="/contact" class="">Contact us</li>
+    <li
+      routerLinkActive="active"
+      routerLink=""
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="me-4"
+    >
+      Home
+    </li>
+    <li routerLinkActive="active" routerLink="/shop" class="me-4">Shop</li>
+    <li routerLinkActive="active" routerLink="/contact" class="">Contact us</li>
   </ul>
   <ul
     class="list-none flex justify-end items-center md:w-1/5 h-full md:text-base"
