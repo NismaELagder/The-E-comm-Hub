@@ -1,0 +1,11 @@
+.bg-img {
+  /* background-image: url("../../../../assets/bg.jpg"); */
+  background-image: url("https://st2.depositphotos.com/1760420/5432/i/450/depositphotos_54324565-stock-photo-online-shopping-and-e-commerce.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+input {
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}

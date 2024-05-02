@@ -1,0 +1,13 @@
+input,
+textarea {
+  display: block;
+  width: 60%;
+  border: solid 1px #dcdddd;
+  padding: 5px 10px;
+  margin: 0.4rem 0;
+  border-radius: 5px;
+}
+
+form div {
+  margin: 0.7rem 0;
+}

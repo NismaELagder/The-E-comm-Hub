@@ -1,0 +1,16 @@
+<div class="min-h-[43.3vh]">
+  <h1 class="font-semibold text-xl mb-4">Orders</h1>
+  <div
+    *ngFor="let order of orders"
+    class="border border-[black] p-6 w-fit rounded"
+  >
+    <p><span class="font-semibold">Product </span>{{ order.item.title }}</p>
+    <p><span class="font-semibold">Quantity</span> {{ order.quantity }}</p>
+    <p>
+      <span class="font-semibold">total </span>${{
+        order.item.price * order.quantity
+      }}
+    </p>
+    <p><span class="font-semibold">to </span>{{ order.address }}</p>
+  </div>
+</div>

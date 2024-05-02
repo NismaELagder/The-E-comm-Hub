@@ -1,0 +1,17 @@
+<div class="relative w-full md:h-[500px] md:mt-4 mt-2 h-[200px]">
+  <img
+    src="{{ items[currentIndex].imageUrl }}"
+    alt="{{ items[currentIndex].alt }} "
+    class="max-w-full w-full h-full object-cover shadow-sm"
+  />
+  <div
+    class="absolute w-full flex h-full justify-between items-center bottom-0 left-0 px-4"
+  >
+    <button (click)="prevIndex(currentIndex)">
+      <img src="../../../../assets/prevBtn.svg" alt="" />
+    </button>
+    <button (click)="nextIndex(currentIndex)">
+      <img src="../../../../assets/nextBtn.svg" alt="" />
+    </button>
+  </div>
+</div>

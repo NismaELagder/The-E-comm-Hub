@@ -1,0 +1,31 @@
+<h1 class="font-semibold text-xl my-4">Products</h1>
+<div class="flex justify-end">
+  <a
+    routerLink="/dashboard/products/add"
+    class="bg-[black] text-white px-4 py-2 rounded text-[white]"
+    >Add product</a
+  >
+</div>
+<div class="flex justify-between flex-wrap">
+  <div
+    *ngFor="let product of products"
+    class="border border-[black] p-6 w-[48%] rounded relative pb-20 text-sm leading-5 my-4"
+  >
+    <div><img src="{{ product.item.image }}" alt="" class="w-14 h-14" /></div>
+    <p class="font-semibold mt-4">{{ product.item.title }}</p>
+    <p>
+      <span class="font-semibold">Category </span>{{ product.item.category }}
+    </p>
+    <p><span class="font-semibold">Price </span>{{ product.item.price }}</p>
+    <p class="text-xs">
+      <span class="font-semibold">Description </span
+      >{{ product.item.description }}
+    </p>
+    <button
+      class="bg-[black] px-6 py-2 text-[white] mt-2 rounded absolute bottom-2"
+      (click)="deleteProduct(product.id)"
+    >
+      Delete
+    </button>
+  </div>
+</div>

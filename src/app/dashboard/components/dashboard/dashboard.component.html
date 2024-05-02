@@ -1,0 +1,19 @@
+<div class="mx-40">
+  <h1 class="font-semibold text-3xl text-center my-12">My Account</h1>
+  <div class="flex">
+    <div class="w-1/5">
+      <aside class="w-full max-h-[60vh] p-8 bg-[#f3f5f7]">
+        <h6 class="font- text-xl mb-4">Account</h6>
+        <hr />
+        <ul class="text-sm my-2 leading-7 text-primary">
+          <li><a routerLink="/dashboard/orders" class="">Orders</a></li>
+          <li><a routerLink="/dashboard/products" class="">Products</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="w-4/5 px-20 py-5">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

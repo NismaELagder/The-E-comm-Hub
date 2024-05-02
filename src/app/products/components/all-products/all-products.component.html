@@ -1,0 +1,61 @@
+<div class="lg:mx-40 md:mx-20 mx-3">
+  <div
+    class="bg-back h-[200px] md:h-[500px] flex justify-center items-center flex-col"
+  >
+    <p class="text-sm font-bold md:font-normal">
+      Home <span class="text-primary font-bold">></span> Shop
+    </p>
+    <h1 class="text-3xl md:text-5xl font-bold">Time to shop!</h1>
+  </div>
+  <div class="flex flex-col md:flex-row w-full">
+    <aside class="w-full md:w-1/5 p-4 md:p-8">
+      <h6 class="font-semibold text-sm">CATEGORIES</h6>
+      <ul
+        class="text-xs my-2 leading-8 text-primary flex flex-wrap justify-between md:block"
+      >
+        <li (click)="getProducts()">All</li>
+        <li
+          *ngFor="let category of categories"
+          (click)="getProductsByCategory(category)"
+          class="mx-1 md:mx-0"
+        >
+          {{ category }}
+        </li>
+      </ul>
+    </aside>
+    <div class="w-full md:w-4/5">
+      <div
+        class="flex flex-wrap flex-row justify-between py-4 w-full"
+        *ngIf="!loading"
+      >
+        <app-product
+          class="w-[49%] md:w-[29%]"
+          *ngFor="let item of products"
+          [product]="item"
+          (sendProduct)="addToCart($event)"
+        ></app-product>
+      </div>
+      <app-spinner *ngIf="loading" class="w-full md:w-4/5"></app-spinner>
+    </div>
+    <!--
+  </div>
+  <app-select
+    [title]="'Categories'"
+    [array]="categories"
+    (selectedItem)="getProductsByCategory($event)"
+  ></app-select>
+  <div class="container">
+    <div class="row justify-content-start py-4" *ngIf="!loading">
+      <div *ngFor="let item of products" class="product-card m-2 shadow-sm">
+        <app-product
+          [product]="item"
+          (sendProduct)="addToCart($event)"
+        ></app-product>
+      </div>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
+  </div>
+</div> -->
+  </div>
+</div>
+<app-footer class="mt-8"></app-footer>

@@ -1,0 +1,80 @@
+<p
+  class="absolute top-2 left-2 z-10 px-2 py-1 bg-[#38cb89] rounded text-[white] animate-pulse"
+  *ngIf="showNew == true"
+>
+  NEW
+</p>
+<div class="relative bg-[#f3f5f7] pt-8 mb-1">
+  <img
+    src="{{ product.item.image }}"
+    alt=""
+    routerLink="/details/{{ product.id }}"
+    class="w-3/5 block mx-auto my-2 h-40"
+  />
+  <div class="hidden group-hover:block absolute bottom-0 w-full">
+    <button
+      type="button"
+      (click)="addToCart()"
+      class="bg-[black] p-1 text-xs md:text-base w-3/5 mx-auto block text-center text-[white] md:py-2 rounded-md"
+    >
+      Add to cart
+    </button>
+  </div>
+</div>
+<div routerLink="/details/{{ product.id }}" class="ps-4">
+  <div *ngIf="rate" class="flex justify-start my-2">
+    <img
+      src="../../../../assets/Star Fill.svg"
+      alt="star"
+      *ngFor="let star of rate"
+    />
+  </div>
+  <p class="font-semibold text-xs">{{ product.item.title }}</p>
+  <p class="text-xs my-1">${{ product.item.price }}</p>
+</div>
+
+<!-- <div
+  class="d-flex justify-content-between top-part"
+>
+  <div class="title-container">
+    <p class="title p-0 m-0">{{ product.item.title }}</p>
+  </div>
+  <div class="price-container">
+    <p class="price d-flex justify-content-center align-items-center">
+      ${{ product.item.price }}
+    </p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center align-items-center image-container">
+  <img
+    src="{{ product.item.image }}"
+    alt="{{ product.item.title }}"
+    class="product-image"
+  />
+</div>
+ <p class="pt-4">
+  - <span>{{ product.item.category }}</span> Product
+</p> 
+<div
+  class="d-flex justify-content-center align-items-center w-100 btn-container"
+>
+  <button
+    type="button"
+    class="d-flex justify-content-center align-items-center cartBtn"
+    (click)="addToCart()"
+  >
+    Add to cart
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+      <path
+        fill="currentColor"
+        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5
+          12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37
+          53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0
+          24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4
+          54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1
+          96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+      />
+    </svg>
+  </button>
+</div> -->

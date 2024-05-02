@@ -1,0 +1,165 @@
+<div class="h-screen flex">
+  <div class="w-1/2 bg-img h-full">
+    <h1 class="text-2xl text-center text-[white] font-bold py-16">
+      The E-comm Hub
+    </h1>
+  </div>
+  <div class="w-1/2 flex items-center px-16">
+    <div class="font-secondary w-full">
+      <h3 class="my-4 font-bold text-2xl">Sign in</h3>
+      <p class="text-primary text-xs">
+        Don't have an account, yet?
+        <a routerLink="/signup" class="text-[#38cb89]">Sign up</a>
+      </p>
+      <form class="w-2/3 block">
+        <input
+          type="email"
+          class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
+          id="email"
+          placeholder="Enter email"
+          name="email"
+          [(ngModel)]="user.email"
+        />
+        <input
+          type="password"
+          class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
+          id="password"
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="user.password"
+        />
+
+        <button
+          type="button"
+          (click)="onLogin()"
+          class="w-full bg-[black] text-[white] text-center py-2"
+        >
+          Sign In
+        </button>
+        <p *ngIf="loginMessage !== ''" class="ps-1 error text-danger py-2">
+          {{ loginMessage }}
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="bg-img text-white">
+  <div class="container">
+    <div
+      class="row justify-content-center w-md-75 form-container align-items-center"
+    >
+      <div class="col-md-4 border shadow-sm rounded custom-p">
+        <h3 class="text-center my-2 py-4">Sign Up</h3>
+        <form class="w-75 mx-auto">
+          <div class="form-group my-2">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Enter username"
+              [(ngModel)]="user.username"
+              name="username"
+            />
+          </div>
+          <div class="form-group my-2">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              name="email"
+              [(ngModel)]="user.email"
+            />
+          </div>
+          <div class="form-group my-2">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              name="password"
+              [(ngModel)]="user.password"
+            />
+          </div>
+          <div class="form-group my-2 type-container">
+            <select
+              class="form-control"
+              id="userType"
+              name="accountType"
+              [(ngModel)]="user.accountType"
+            >
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+            </select>
+            <label for="userType" class="my-1 ps-1 type">Account type</label>
+          </div>
+          <button
+            type="button"
+            (click)="onSignup()"
+            class="btn btn-block signup"
+          >
+            Sign Up
+          </button>
+          <p *ngIf="showMessage == true" class="ps-1 error text-danger py-2">
+            {{ signUpMessage }}
+          </p>
+        </form>
+      </div>
+      <div class="col-md-4 shadow-sm animate-img d-md-block d-none">
+        <img src="../../../../assets//sign-up-animate.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- 
+
+
+
+
+
+
+
+
+<div class="bg-img text-white">
+  <div class="container">
+    <div
+      class="row justify-content-center align-items-center w-md-75 form-container"
+    >
+      <div class="col-md-4 border shadow-sm rounded custom-p">
+        <h3 class="text-center my-2">Login</h3>
+        <form>
+          <div class="form-group my-2">
+            <label for="email" class="ps-1 my-1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              name="email"
+              [(ngModel)]="user.email"
+            />
+          </div>
+          <div class="form-group my-2">
+            <label for="password" class="ps-1 my-1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              [(ngModel)]="user.password"
+              name="password"
+            />
+          </div>
+          <button type="submit" class="btn login my-3" (click)="onLogin()">
+            Login
+          </button>
+          <p *ngIf="loginMessage != ''" class="msg">{{ loginMessage }}</p>
+        </form>
+      </div>
+      <div class="col-md-4 shadow-sm animate-img d-md-block d-none">
+        <img src="../../../../assets/login-animate.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,46 @@
+/* .img-container {
+  width: 40%;
+  min-width: 40%;
+} */
+.img-container img {
+  min-width: 100%;
+  width: 100%;
+}
+
+.category {
+  border-radius: 10px;
+  font-weight: 700;
+  width: 30%;
+  padding: 5px 10px;
+}
+
+span {
+  font-weight: 700;
+}
+
+main {
+  align-items: center;
+  margin-top: 4rem;
+  color: white;
+}
+
+.btn-container {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  left: 0;
+}
+.cartBtn {
+  width: 75%;
+  height: 40px;
+  background-color: #024b78;
+  color: white;
+  border-radius: 15px;
+}
+
+button svg {
+  color: white;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+}

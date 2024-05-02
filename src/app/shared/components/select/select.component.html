@@ -1,0 +1,11 @@
+<select
+  name="category"
+  class="w-3/5 border border-[#f3f5f7] text-gray-900 text-sm rounded-lg block p-2.5 outline-none my-[.4rem]"
+  (change)="changesDetection($event)"
+>
+  <option value="" selected disabled>{{ title }}</option>
+  <option value="all">All</option>
+  <option value="{{ item }}" *ngFor="let item of array">
+    {{ item }}
+  </option>
+</select>
