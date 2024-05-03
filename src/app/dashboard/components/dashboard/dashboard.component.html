@@ -1,4 +1,4 @@
-<div class="lg:mx-40 md:mx-20 mx-3">
+<div class="lg:mx-40 md:mx-20 mx-3 pb-48">
   <h1 class="font-semibold text-3xl text-center my-12">My Account</h1>
   <div class="flex md:flex-row flex-col">
     <div class="w-full md:w-1/5">
@@ -7,9 +7,18 @@
         <hr class="md:block hidden" />
         <ul class="text-sm my-2 leading-7 text-primary md:block flex">
           <li class="md:me-0 me-4">
-            <a routerLink="/dashboard/orders" class="">Orders</a>
+            <a routerLink="/dashboard/orders" routerLinkActive="active" class=""
+              >Orders</a
+            >
           </li>
-          <li><a routerLink="/dashboard/products" class="">Products</a></li>
+          <li>
+            <a
+              routerLink="/dashboard/products"
+              routerLinkActive="active"
+              class=""
+              >Products</a
+            >
+          </li>
           <li class="md:mt-6"><app-logout></app-logout></li>
         </ul>
       </aside>

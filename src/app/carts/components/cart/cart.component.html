@@ -48,13 +48,25 @@
 
       <p class="text-sm">Your cart has {{ cartItems.length }} items</p>
       <p class="text-sm">total: ${{ totalPrice }}</p>
-      <input
-        type="text"
-        name="address"
-        placeholder="address"
-        class="p-2 my-4 border-b w-11/12 mx-auto border-b-[#f3f5f7] animate-pulse"
-        [(ngModel)]="address"
-      />
+      <form [formGroup]="address">
+        <input
+          type="text"
+          name="address"
+          placeholder="address"
+          formControlName="address"
+          class="p-2 my-4 border-b w-11/12 mx-auto text-sm border-b-[#f3f5f7] animate-pulse"
+        />
+        <span
+          class="text-xs text-[#ff5555]"
+          *ngIf="
+            address.controls['address'].invalid &&
+            (address.controls['address'].dirty ||
+              address.controls['address'].touched)
+          "
+        >
+          address is required to confirm your order.
+        </span>
+      </form>
       <div class="flex justify-between items-center mt-4">
         <button
           (click)="resetCart()"
@@ -64,12 +76,14 @@
         </button>
         <button
           type="button"
-          class="text-xs text-center border-[black] text-[black] border px-4 py-2 rounded"
+          class="text-xs text-center border-[black] text-[black] border px-4 py-2 rounded disabled:text-primary disabled:border-primary"
           (click)="confirmOrder()"
+          [disabled]="address.invalid"
         >
           Check out
         </button>
       </div>
+
       <span *ngIf="showSuccess">Order added successfully!</span>
     </div>
   </div>

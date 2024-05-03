@@ -18,3 +18,7 @@ form div {
     width: 60%;
   }
 }
+
+button:disabled {
+  background-color: rgba(0, 0, 0, 0.744);
+}

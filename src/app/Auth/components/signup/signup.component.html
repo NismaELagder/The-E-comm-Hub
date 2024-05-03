@@ -11,37 +11,65 @@
         Already have an account?
         <a routerLink="/login" class="text-[#38cb89]">Login</a>
       </p>
-      <form class="md:w-2/3 block">
+      <form class="md:w-2/3 block" [formGroup]="user">
         <input
           type="text"
           class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
           id="username"
           placeholder="Enter username"
-          [(ngModel)]="user.username"
           name="username"
+          formControlName="username"
         />
+        <p
+          class="text-xs text-[#ff5555]"
+          *ngIf="
+            user.controls['email'].invalid &&
+            (user.controls['email'].dirty || user.controls['email'].touched)
+          "
+        >
+          Username is required & should be at least 3 characters.
+        </p>
         <input
           type="email"
           class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
           id="email"
           placeholder="Enter email"
           name="email"
-          [(ngModel)]="user.email"
+          formControlName="email"
         />
+        <p
+          class="text-xs text-[#ff5555]"
+          *ngIf="
+            user.controls['email'].invalid &&
+            (user.controls['email'].dirty || user.controls['email'].touched)
+          "
+        >
+          Please enter a valid email
+        </p>
         <input
           type="password"
           class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
           id="password"
           placeholder="Password"
           name="password"
-          [(ngModel)]="user.password"
+          formControlName="password"
         />
+        <p
+          class="text-xs text-[#ff5555]"
+          *ngIf="
+            user.controls['password'].invalid &&
+            (user.controls['password'].dirty ||
+              user.controls['password'].touched)
+          "
+        >
+          Password is required & should be at least 8 characters.
+        </p>
         <div class="type-container">
           <select
             class="border-b my-4 block w-full border-primary border-opacity-50 py-2 peer"
             id="userType"
             name="accountType"
-            [(ngModel)]="user.accountType"
+            [(ngModel)]="accountType"
           >
             <option value="buyer">Buyer</option>
             <option value="seller">Seller</option>
@@ -56,6 +84,7 @@
           type="button"
           (click)="onSignup()"
           class="w-full bg-[black] text-[white] text-center py-2"
+          [disabled]="user.invalid"
         >
           Sign Up
         </button>

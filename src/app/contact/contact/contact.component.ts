@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -6,24 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent {
-  info: any = { message: '', name: '', email: '' };
-  showMessage: boolean = false;
-  successMessage: string =
-    'Thanks for connection. We will be in touch with you soon!';
+  info: FormGroup = new FormGroup({
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+  });
+  successMessage: string = '';
   empty: boolean = true;
-  ngDoCheck() {
-    if (
-      this.info.name == '' ||
-      this.info.message == '' ||
-      this.info.email == ''
-    ) {
-      this.empty = true;
-    } else {
-      this.empty = false;
-    }
-  }
+  ngDoCheck() {}
   onSend() {
     // for now we will just show a message , no real connection
-    this.showMessage = true;
+    this.successMessage = 'Thanks for connection. We will be in touch soon!';
+    this.info.reset();
+    setTimeout(() => (this.successMessage = ''), 1000);
   }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,15 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   constructor(private Router: Router, private service: AuthService) {}
   loginMessage = '';
-  user = { email: '', password: '' };
+
+  user: FormGroup = new FormGroup({
+    email: new FormControl('', [Validators.email, Validators.required]),
+
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(8),
+    ]),
+  });
 
   ngOnInit() {
     if ('isLoggedIn' in localStorage && 'currentUser' in localStorage) {
@@ -20,7 +29,10 @@ export class LoginComponent {
 
   onLogin() {
     this.service
-      .login(this.user.email, this.user.password)
+      .login(
+        this.user.controls['email'].value,
+        this.user.controls['password'].value
+      )
       .subscribe((res: any) => {
         if (res) {
           this.loginMessage = 'User loggedin successfully';

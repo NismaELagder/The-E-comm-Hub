@@ -19,3 +19,6 @@ input {
   left: 0.2rem;
   font-size: 0.8rem;
 }
+button:disabled {
+  background-color: rgba(0, 0, 0, 0.744);
+}

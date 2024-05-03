@@ -4,9 +4,16 @@ import { CartComponent } from './components/cart/cart.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CartComponent],
-  imports: [CommonModule, SharedModule, RouterModule, BrowserModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    RouterModule,
+    BrowserModule,
+    ReactiveFormsModule,
+  ],
 })
 export class CartsModule {}

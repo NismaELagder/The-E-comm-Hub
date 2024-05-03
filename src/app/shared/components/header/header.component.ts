@@ -14,14 +14,16 @@ export class HeaderComponent {
   hideBtn: boolean = false;
   showDashboardBtn: boolean = false;
   hideNav: boolean = false;
+  highlightBtn: boolean = false;
   ngOnInit() {
     this.Router.events.subscribe((event: any) => {
-      if (event.url == '/login' || event.url === '/signup') {
+      if (event.url == '/login' || event.url.includes('signup')) {
+        console.log(event.url);
         this.hideNav = true;
+        this.highlightBtn = true;
       } else {
         this.hideNav = false;
       }
-      // console.log(event.url);
       this.isSeller =
         JSON.parse(localStorage.getItem('currentUser')!)?.accountType ===
         'seller';

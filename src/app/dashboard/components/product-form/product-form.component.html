@@ -1,6 +1,6 @@
 <h1 class="font-semibold text-xl mb-4">Product Details</h1>
 <div>
-  <form>
+  <form [formGroup]="currentProduct">
     <div>
       <label for="title" class="text-primary text-sm font-semibold"
         >Title</label
@@ -8,55 +8,110 @@
       <input
         type="text"
         placeholder="title"
-        [(ngModel)]="currentProduct.title"
+        formControlName="title"
+        name="title"
       />
+      <p
+        class="text-xs text-[#ff5555]"
+        *ngIf="
+          currentProduct.controls['title'].invalid &&
+          (currentProduct.controls['title'].dirty ||
+            currentProduct.controls['title'].touched)
+        "
+      >
+        title is required & should be at least 4 characters.
+      </p>
     </div>
     <div>
       <label for="" class="text-primary text-sm font-semibold">Image</label>
-      <input type="url" [(ngModel)]="currentProduct.image" placeholder="URL" />
+      <input
+        type="url"
+        placeholder="URL"
+        name="image"
+        formControlName="image"
+      />
+      <p
+        class="text-xs text-[#ff5555]"
+        *ngIf="
+          currentProduct.controls['image'].invalid &&
+          (currentProduct.controls['image'].dirty ||
+            currentProduct.controls['image'].touched)
+        "
+      >
+        Product's image should be a URL.
+      </p>
     </div>
     <div>
       <label for="" class="text-primary text-sm font-semibold"
         >Description</label
       >
       <textarea
+        formControlName="description"
         name="description"
         class="text-primary text-sm font-semibold"
-        [(ngModel)]="currentProduct.description"
         placeholder="description"
       >
       </textarea>
+      <p
+        class="text-xs text-[#ff5555]"
+        *ngIf="
+          currentProduct.controls['description'].invalid &&
+          (currentProduct.controls['description'].dirty ||
+            currentProduct.controls['description'].touched)
+        "
+      >
+        Description is required & should be at least 6 characters.
+      </p>
     </div>
     <div>
       <label for="price" class="text-primary text-sm font-semibold"
         >Price</label
       >
-      <input type="number" name="price" [(ngModel)]="currentProduct.price" />
+      <input type="number" name="price" formControlName="price" />
+      <p
+        class="text-xs text-[#ff5555]"
+        *ngIf="
+          currentProduct.controls['price'].invalid &&
+          (currentProduct.controls['price'].dirty ||
+            currentProduct.controls['price'].touched)
+        "
+      >
+        Price is required & should be at least $1.
+      </p>
     </div>
 
     <div>
       <label for="rate" class="text-primary text-sm font-semibold">Rate</label>
-      <input type="number" name="rate" [(ngModel)]="currentProduct.rate" />
+      <input type="number" name="rate" formControlName="rate" />
+      <p
+        class="text-xs text-[#ff5555]"
+        *ngIf="
+          currentProduct.controls['rate'].invalid &&
+          (currentProduct.controls['rate'].dirty ||
+            currentProduct.controls['rate'].touched)
+        "
+      >
+        Rate can be be an integer between 0 & 4.
+      </p>
     </div>
     <div>
       <label for="" class="text-primary text-sm font-semibold">Category</label>
       <app-select
-        [(ngModel)]="currentProduct.category"
         [title]="'Categories'"
-        (selectedItem)="setProductCategory($event)"
         [array]="categories"
+        (selectedItem)="setProductCategory($event)"
       >
       </app-select>
     </div>
-    <div>
-      <button
-        type="button"
-        class="bg-[black] text-white px-4 py-2 rounded text-[white] my-4"
-        (click)="addProduct()"
-      >
-        Add product
-      </button>
-    </div>
+    <div></div>
+    <button
+      type="submit"
+      class="bg-[black] text-white px-4 py-2 rounded text-[white] my-4"
+      (click)="addProduct()"
+      [disabled]="currentProduct.invalid"
+    >
+      Add product
+    </button>
   </form>
 </div>
 <!-- <div class="flex justify-end">  <a

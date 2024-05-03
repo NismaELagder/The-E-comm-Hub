@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
 import { CartService } from '../../services/cart.service';
-
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
+  address: FormGroup = new FormGroup({
+    address: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
+  });
+
   constructor(private service: CartService) {}
+
   cartItems: any = localStorage.getItem('cart')!;
   totalPrice: number = 0;
   math = Math;
   showSuccess: boolean = false;
   today: Date = new Date();
-  address: string = '';
   ngOnInit() {
     this.getCartProducts();
     this.getProductsTotalPrice();
@@ -62,7 +69,7 @@ export class CartComponent {
   confirmOrder() {
     for (const item of this.cartItems) {
       this.service
-        .addToCart({ ...item, address: this.address })
+        .addToCart({ ...item, address: this.address.controls['address'].value })
         .subscribe((res) => console.log(res));
     }
   }

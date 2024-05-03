@@ -11,32 +11,54 @@
         Don't have an account, yet?
         <a routerLink="/signup" class="text-[#38cb89]">Sign up</a>
       </p>
-      <form class="md:w-2/3 block">
+      <form class="md:w-2/3 block" [formGroup]="user">
         <input
           type="email"
-          class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
+          class="border-b mt-4 mb-2 block w-full border-primary border-opacity-50 py-2"
           id="email"
           placeholder="Enter email"
           name="email"
-          [(ngModel)]="user.email"
+          formControlName="email"
         />
+        <p
+          class="text-[.6rem] text-[#ff5555]"
+          *ngIf="
+            user.controls['email'].invalid &&
+            (user.controls['email'].dirty || user.controls['email'].touched)
+          "
+        >
+          Email is required
+        </p>
         <input
           type="password"
-          class="border-b my-4 block w-full border-primary border-opacity-50 py-2"
+          class="border-b mt-4 mb-2 block w-full border-primary border-opacity-50 py-2"
           id="password"
           placeholder="Password"
           name="password"
-          [(ngModel)]="user.password"
+          formControlName="password"
         />
-
+        <p
+          class="text-[.6rem] text-[#ff5555] mb-2"
+          *ngIf="
+            user.controls['password'].invalid &&
+            (user.controls['password'].dirty ||
+              user.controls['password'].touched)
+          "
+        >
+          Password is required
+        </p>
         <button
           type="button"
           (click)="onLogin()"
           class="w-full bg-[black] text-[white] text-center py-2"
+          [disabled]="user.invalid"
         >
           Sign In
         </button>
-        <p *ngIf="loginMessage !== ''" class="ps-1 error py-2 text-xs">
+        <p
+          *ngIf="loginMessage !== ''"
+          class="ps-1 error py-2 text-xs text-[green]"
+        >
           {{ loginMessage }}
         </p>
       </form>

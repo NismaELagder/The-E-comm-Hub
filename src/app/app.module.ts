@@ -14,7 +14,7 @@ import { DashboardComponent } from './dashboard/components/dashboard/dashboard.c
 import { OrdersComponent } from './dashboard/components/orders/orders.component';
 import { ProductsComponent } from './dashboard/components/products/products.component';
 import { ProductListComponent } from './dashboard/components/product-list/product-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductFormComponent } from './dashboard/components/product-form/product-form.component';
 import { HomeComponent } from './Home/home/home.component';
 import { ContactComponent } from './contact/contact/contact.component';
@@ -42,6 +42,7 @@ import { ContactComponent } from './contact/contact/contact.component';
     ProductsModule,
     CartsModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
