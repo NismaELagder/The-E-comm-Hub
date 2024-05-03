@@ -215,55 +215,8 @@
         "rate": 3.6
       },
       "id": 20
-    },
-    {
-      "seller_id": 1,
-      "item": {
-        "title": "",
-        "description": "test description",
-        "category": "electronics",
-        "image": "",
-        "price": 20,
-        "rate": 3
-      },
-      "id": 21
-    },
-    {
-      "seller_id": 1,
-      "item": {
-        "title": "",
-        "description": "",
-        "category": "",
-        "image": "",
-        "price": "",
-        "rate": ""
-      },
-      "id": 22
-    },
-    {
-      "seller_id": 1,
-      "item": {
-        "title": "testing",
-        "description": "testing description",
-        "category": "electronics",
-        "image": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?cs=srgb&dl=pexels-madebymath-90946.jpg&fm=jpg",
-        "price": 232,
-        "rate": 4
-      },
-      "id": 23
-    },
-    {
-      "seller_id": 1,
-      "item": {
-        "title": "trial",
-        "description": "trial ",
-        "category": "electronics",
-        "image": "https://images.ctfassets.net/hrltx12pl8hq/3Z1N8LpxtXNQhBD5EnIg8X/975e2497dc598bb64fde390592ae1133/spring-images-min.jpg",
-        "price": 1,
-        "rate": 2
-      },
-      "id": 24
     }
+
   ],
   "users": [
     {
@@ -275,19 +228,6 @@
     }
   ],
   "carts": [
-    {
-      "id": 4,
-      "seller_id": 1,
-      "item": {
-        "title": "Mens Casual Slim Fit",
-        "price": 15.99,
-        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-        "category": "men's clothing",
-        "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-        "rate": 2.1
-      },
-      "quantity": 1,
-      "address": "nisma address"
-    }
+
   ]
 }
